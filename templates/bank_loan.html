@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Bank Loan Prediction Made by Reshad Karim Navid</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">BANK LOGO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" class="ektabutton">Navigation</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Welcome to our <br>Online Bank Loan Prediction System</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"> Please fill up these informations to find out if your are eligiable to take a loan from our bank
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+
+        <div class="input-field col s4">
+            <label for="Gender"><b>Gender</b></label>
+            <br>
+            <select style="display: block;" name="Gender" id="gender" class="validate">
+              <option value="" disabled selected>Select gender</option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+        </div>
+
+        <div class="input-field col s4">
+          <label for="Married"><b>Maritial status</b></label>
+            <br>
+            <select style="display: block;" name="Married" id="married" class="validate">
+              <option value="" disabled selected>Select</option>
+              <option value="1">married</option>
+              <option value="0"> unmarried</option>
+            </select>
+        </div>
+
+        <div class="input-field col s4">
+            <label for="Dependents"><b>Dependents</b></label>
+            <br>
+            <select style="display: block;" name="Dependents" id="dependents" class="validate">
+              <option value="" disabled selected>Select</option>
+              <option value="0">None</option>
+              <option value="1">1 dependent</option>
+              <option value="2">2 dependents</option>
+              <option value="4">3 or more dependents</option>
+            </select>
+        </div>
+
+          <div class="input-field col s4">
+            <label for="Education"><b>Education</b></label>
+            <br>
+            <select style="display: block;" name="Education" id="education" class="validate">
+              <option value="" disabled selected>Select</option>
+              <option value="0">Undergraduate</option>
+              <option value="1">Graduate</option>
+            </select>
+        </div>
+
+          <div class="input-field col s4">
+            <label for="Self_Employed"><b>Self_Employed?</b></label>
+            <br>
+            <select style="display: block;" name="Self_Employed" id="self_Employed" class="validate">
+              <option value="" disabled selected>yes/no</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+        </div>
+
+          <div class="input-field col s4">
+            <label for="MonthlyIncome"><b>Monthly Income</b></label>
+            <br>
+          <input type="number" id="MonthlyIncome" name="MonthlyIncome" placeholder="Amount in numbers" class="validate">
+        </div>
+
+          <div class="input-field col s4">
+            <label for="CoapplicantIncome"><b>Co applicant Income</b></label>
+            <br>
+          <input type="number" id="coapplicantIncome" name="CoapplicantIncome" placeholder="Amount in numbers" class="validate">
+        </div>
+
+          <div class="input-field col s4">
+            <label for="LoanAmount"><b>Loan Amount</b></label>
+            <br>
+          <input type="number" id="loanAmount" name="LoanAmount" placeholder="Amount in numbers" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="Loan_Amount_Term"><b>Loan_Amount_Term</b></label>
+          <br>
+        <input type="number" id="loan_Amount_Term" name="Loan_Amount_Term" placeholder="Amount in numbers" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="Credit_History"><b>Credit_History</b></label>
+          <br>
+          <select style="display: block;" name="Credit_History" id="credit_History" class="validate">
+            <option value="" disabled selected>yes/no</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+      </div>
+
+      <div class="input-field col s4">
+        <label for="Property_Area"><b>Property_Area</b></label>
+        <br>
+        <select style="display: block;" name="Property_Area" id="property_Area" class="validate">
+          <option value="" disabled selected>Select</option>
+          <option value="0">Urban</option>
+          <option value="1">SemiUrban</option>
+          <option value="2">rural</option>
+        </select>
+    </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+       <h5>{{pred}}</h5> <br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Thesis Bio</h5>
+          <p class="grey-text text-lighten-4">Welcome to our Online Bank Loan Prediction System. We are a team of University students working on this project like it's our full time job. Please fill up the above given informations to find out if your are eligiable to take a loan from our bank.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="https://youtu.be/vCtwyKX74lw">Learn More</a></li>
+            <li><a class="white-text" href="https://youtu.be/hZAf5rMbN0Q">learn More</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://youtu.be/bf5yTO9KLqE">Learn More</a></li>
+            <li><a class="white-text" href="https://youtu.be/R-fA8wNvDh8">learn More</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://youtu.be/x9xmUPxYuAY">Thesis Gang</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
